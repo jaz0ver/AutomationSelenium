@@ -21,7 +21,7 @@ public class LoginPagePF {
 //		verify.assertTrue(formLink.getText().equals("Logi"));
 //		verify.assertAll();
 //		assertTrue(formLink.getText().equals("Login"));
-		System.out.println(formLink.getText());
+//		System.out.println(formLink.getText());
 		formLink.click();
 	}
 

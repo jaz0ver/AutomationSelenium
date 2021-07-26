@@ -1,0 +1,6 @@
+pageObject\herokuapp\LoginPage.class
+framework\BaseTest.class
+framework\WebManager.class
+framework\BasePage.class
+pageObject\pageFactory\herokuapp\LoginPagePF.class
+framework\webElement\Element.class

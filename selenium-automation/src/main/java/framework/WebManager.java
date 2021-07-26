@@ -13,7 +13,7 @@ public class WebManager {
 		if(browserType.equals("firefox")) {
 			
 		} else if (browserType.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\browserDrivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\browserDrivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 				} else if (browserType.equals("IE")) {
 			
