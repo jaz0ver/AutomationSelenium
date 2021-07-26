@@ -1,0 +1,57 @@
+AutomationSelenium items
+    1. Make chromedriver path to be dynamic
+    2. Reports and logs
+
+Selenium Installation Guide
+
+1. Install JDK
+2. Check in CMD if the Java is recognized by your machine (java -version and javac -version)
+3. Install Eclipse
+4. Install TestNg from Eclipse Marketplace
+5. Create Maven Project
+6. Check Java version of Maven Project (JavaSE 1.8)
+7. Add the following in POM
+    a.  <properties>
+            <maven.compiler.source>1.8</maven.compiler.source>
+            <maven.compiler.target>1.8</maven.compiler.target>
+        </properties>
+        <build>
+            <defaultGoal>install</defaultGoal>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                </plugin>
+            </plugins>
+        </build>
+    b. from mvnrepository get Selenium-JAVA and TestNg
+8. Create your first test class
+9. Create TestNg.xml
+10. Download and extract maven to C:\Program FilesMaven to PC (https://maven.apache.org/download.cgi)
+11. Add to Environment variable in your machine
+    System variable 
+        Variable Name: M2_HOME (New)
+        Variable Value: C:\Program Files\(folder name of mvn)
+        Variable Name: Path (Edit)
+        Variable Value: %M2_HOME%\bin
+12. Check in CMD if the MVN is recognized by your machine (mvn -version)
+13. Include the following lines in POM to trigger maven (TestNg.xml - https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html)
+    	<plugins>
+        	<plugin>
+          		<groupId>org.apache.maven.plugins</groupId>
+		          <artifactId>maven-surefire-plugin</artifactId>
+		          <version>3.0.0-M1</version>
+		          <configuration>
+		          	<suiteXmlFiles>
+		          		<suiteXmlFile>TestNg.xml</suiteXmlFile>
+		          		<!-- <suiteXmlFile>suiteManagement.xml</suiteXmlFile> -->
+		          		<!-- <suiteXmlFile>${suiteFileName}</suiteXmlFile> -->
+		          	</suiteXmlFiles>
+		          </configuration>
+        	</plugin>
+  		</plugins>
+14. Use CMD to perform mvn Test of your Project
+    a. Open CMD
+    b. Navigate to your project in CMD (cd C:\Users\jazxz\git\AutomationSelenium)
+    c. Type mvn clean test
