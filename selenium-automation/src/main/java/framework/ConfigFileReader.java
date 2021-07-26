@@ -24,40 +24,16 @@ public class ConfigFileReader {
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Configuration.properties not found at " + propertyFilePath);
+			throw new RuntimeException("Configuration.properties was not found in " + propertyFilePath);
 		} 
 	}
 	
 	public String getConfig(String Key){
-		String driverPath = properties.getProperty(Key);
-		if(driverPath!= null) 
-			return driverPath;
+		String path = properties.getProperty(Key);
+		if(path!= null) 
+			return path;
 		else 
 			throw new RuntimeException(Key + " not specified in the Configuration.properties file."); 
-	}
-	
-	public String getDriverPath(){
-		String driverPath = properties.getProperty("driverPath");
-		if(driverPath!= null) 
-			return driverPath;
-		else 
-			throw new RuntimeException("driverPath not specified in the Configuration.properties file."); 
-	}
-	
-	public long getImplicitlyWait() { 
-		String implicitlyWait = properties.getProperty("implicitlyWait");
-		if(implicitlyWait != null) 
-			return Long.parseLong(implicitlyWait);
-		else 
-			throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file."); 
-	}
-	 
-	public String getApplicationUrl() {
-		String url = properties.getProperty("url");
-		if(url != null) 
-			return url;
-		else 
-			throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
  
 }
